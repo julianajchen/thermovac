@@ -4,7 +4,7 @@
 
 O MQTT (Message Queuing Telemetry Transport) é um protocolo de comunicação leve, baseado no modelo publish/subscribe, utilizado para a transmissão de mensagens entre dispositivos por meio de um broker.
 
-No ThermoVac, o ESP32 atua como publicador (*publisher*), enviando os dados coletados pelo sensor DHT22 ao broker MQTT por meio da conexão Wi-Fi.
+No ThermoVac, o ESP32 atua como publicador (publisher), enviando ao broker MQTT, por meio da conexão Wi-Fi, os dados de temperatura e umidade coletados pelo sensor DHT22 e a classificação da condição térmica realizada pelo microcontrolador.
 
 ## Configuração da Comunicação
 
@@ -48,4 +48,4 @@ Exemplo de mensagem:
 
 ## Visualização dos Dados
 
-As mensagens podem ser acompanhadas por meio de um cliente MQTT, que se conecta ao broker e realiza a inscrição (subscribe) no tópico vacinas/dados. No projeto, foi utilizado o HiveMQ WebSocket Client para visualizar as mensagens publicadas pelo ThermoVac.
+As mensagens podem ser acompanhadas por meio de um cliente MQTT, que se conecta ao broker e realiza a inscrição (subscribe) no tópico vacinas/dados. No projeto, foi utilizado o HiveMQ WebSocket Client, por meio de uma conexão WebSocket na porta 8884, para visualizar as mensagens publicadas pelo ThermoVac.
