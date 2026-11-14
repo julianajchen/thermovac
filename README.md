@@ -40,7 +40,7 @@ $ cd thermovac
 3. Instale as bibliotecas necessárias, listadas em `src/libraries.txt`.
 4. Utilize o arquivo `hardware/diagram.json` para reproduzir a montagem do circuito na plataforma Wokwi.
 5. Execute a simulação. A conexão Wi-Fi será realizada pela rede `Wokwi-GUEST`.
-6. Acesse o HiveMQ WebSocket Client e conecte-se ao broker `mqtt-dashboard.com`, na porta `1883`.
+6. Acesse o HiveMQ WebSocket Client e conecte-se ao broker `mqtt-dashboard.com`, na porta `8884`.
 7. Inscreva-se no tópico `vacinas/dados` para visualizar as mensagens enviadas pelo ThermoVac.
 
 As mensagens recebidas apresentam os valores de temperatura, umidade e o estado de classificação do sistema.
