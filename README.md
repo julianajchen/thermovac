@@ -15,20 +15,8 @@ O projeto foi desenvolvido e testado por meio de simulação na plataforma Wokwi
 ## Pré-requisitos
 - Arduino IDE (ou ambiente compatível com ESP32).
 - Bibliotecas: WiFi, PubSubClient, DHT, Wire e LiquidCrystal_I2C.
-- Acesso à Plataforma Wokwi
-- Cliente MQTT HiveMQ WebSocketClient.
-
-## Tecnologias Utilizadas
-
-- ESP32 DevKitC V4
-- Sensor DHT22
-- Display LCD 16x2 com interface I2C
-- LEDs indicadores
-- Buzzer passivo
-- Wi-Fi e TCP/IP
-- Protocolo MQTT
-- Broker HiveMQ
 - Plataforma Wokwi
+- Broker MQTT (HiveMQ WebSocket Client)
 
 ## Estrutura do Repositório
 
@@ -44,13 +32,13 @@ A documentação do projeto está organizada nas seguintes pastas:
 1. Clone este repositório:
 
 ```bash
-git clone https://github.com/julianajchen/thermovac.git
-cd thermovac
+$ git clone https://github.com/julianajchen/thermovac.git
+$ cd thermovac
 ```
 
 2. Abra o arquivo `src/sketch.ino` na Arduino IDE.
-3. Instale as bibliotecas necessárias, listadas em `libraries.txt`.
-4. Abra o circuito na plataforma Wokwi utilizando o arquivo `hardware/diagram.json`.
+3. Instale as bibliotecas necessárias, listadas em `src/libraries.txt`.
+4. Utilize o arquivo `hardware/diagram.json` para reproduzir a montagem do circuito na plataforma Wokwi.
 5. Execute a simulação. A conexão Wi-Fi será realizada pela rede `Wokwi-GUEST`.
 6. Acesse o HiveMQ WebSocket Client e conecte-se ao broker `mqtt-dashboard.com`, na porta `1883`.
 7. Inscreva-se no tópico `vacinas/dados` para visualizar as mensagens enviadas pelo ThermoVac.
