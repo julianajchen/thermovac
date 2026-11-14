@@ -1,9 +1,9 @@
+// Bibliotecas
 #include <WiFi.h>
 #include <PubSubClient.h>
 #include <DHT.h>
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
-
 
 // Definição dos pinos
 #define DHT_PIN 15
@@ -24,14 +24,13 @@ const int MQTT_PORT = 1883;
 // Tópico MQTT
 const char* TOPICO_DADOS = "vacinas/dados";
 
+// Inicialização dos objetos responsáveis pelo sensor, comunicação Wi-Fi e display LCD
 DHT dht(DHT_PIN, DHT_TYPE);
 
 WiFiClient espClient;
 PubSubClient mqttClient(espClient);
 
-// LCD 16x2 I2C
 LiquidCrystal_I2C lcd(0x27, 16, 2);
-
 
 // Conectar ao Wifi
 void conectarWiFi() {
@@ -79,6 +78,7 @@ void conectarMQTT() {
   }
 }
 
+// Inicialização do sistema
 void setup() {
 
   Serial.begin(115200);
@@ -113,6 +113,7 @@ void setup() {
   Serial.println("================================");
 }
 
+// Rotina principal
 void loop() {
 
   if (!mqttClient.connected()) {
@@ -146,7 +147,7 @@ void loop() {
   // Faixa NORMAL
   if (temperatura >= 2.5 && temperatura <= 7.5) {
 
-    // VERDE
+    // LED verde
     digitalWrite(LED_GREEN, HIGH);
     digitalWrite(LED_YELLOW, LOW);
     digitalWrite(LED_RED, LOW);
@@ -164,7 +165,7 @@ void loop() {
     (temperatura > 7.5 && temperatura <= 8.0)
   ) {
 
-    // AMARELO
+    // LED amarelo
     digitalWrite(LED_GREEN, LOW);
     digitalWrite(LED_YELLOW, HIGH);
     digitalWrite(LED_RED, LOW);
@@ -177,11 +178,9 @@ void loop() {
   }
 
   // Faixa ALERTA
-
   else {
 
-    // VERMELHO
-
+    // LED vermelho
     digitalWrite(LED_GREEN, LOW);
     digitalWrite(LED_YELLOW, LOW);
     digitalWrite(LED_RED, HIGH);
@@ -212,7 +211,7 @@ void loop() {
   Serial.print(": LIGADO | BUZZER: ");
   Serial.println(estadoBuzzer);
 
-  // LCD
+  // Atualização LCD
   lcd.clear();
 
   lcd.setCursor(0, 0);
@@ -231,7 +230,7 @@ void loop() {
   mensagem += "\"status\":\"" + statusAtual + "\"";
   mensagem += "}";
 
-  // Publicacao dos dados no tópico
+  // Publicação dos dados no tópico
   bool publicado = mqttClient.publish(
     TOPICO_DADOS,
     mensagem.c_str()
