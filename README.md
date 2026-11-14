@@ -62,6 +62,8 @@ Os registros da simulação e os resultados dos testes de tempo de resposta est�
 
 - [Hardware](hardware/hardware.md)
 - [Comunicação MQTT](protocols/mqtt.md)
+- [Diagrama](hardware/diagrama.json)
+- [Resultados](results/data/tempos-resposta.md)
 
 ## Licença
 
