@@ -48,4 +48,4 @@ Exemplo de mensagem:
 
 ## Visualização dos Dados
 
-As mensagens podem ser acompanhadas por meio de um cliente MQTT, realizando a conexão com o broker e a inscrição (*subscribe*) no tópico `vacinas/dados`.
+As mensagens podem ser acompanhadas por meio de um cliente MQTT, que se conecta ao broker e realiza a inscrição (subscribe) no tópico vacinas/dados. No projeto, foi utilizado o HiveMQ WebSocket Client para visualizar as mensagens publicadas pelo ThermoVac.
