@@ -1,5 +1,10 @@
 # Comunicação MQTT
 
+## Conectividade de Rede
+
+- Wi-Fi: recurso integrado ao ESP32-WROOM-32D, utilizado para conectar o microcontrolador à rede sem fio.
+- TCP/IP: conjunto de protocolos utilizado no transporte dos dados entre o ESP32 e o broker MQTT.
+
 ## Protocolo MQTT
 
 O MQTT (Message Queuing Telemetry Transport) é um protocolo de comunicação leve, baseado no modelo publish/subscribe, utilizado para a transmissão de mensagens entre dispositivos por meio de um broker.
@@ -13,6 +18,12 @@ No ThermoVac, o ESP32 atua como publicador (publisher), enviando ao broker MQTT,
 - **Protocolo de transporte:** TCP/IP
 - **Tópico:** `vacinas/dados`
 - **Formato dos dados:** JSON
+
+## Bibliotecas de Comunicação
+
+- WiFi.h: gerenciamento da conexão Wi-Fi.
+
+- PubSubClient.h: gerenciamento da comunicação MQTT.
 
 ## Configurações de QoS
 
