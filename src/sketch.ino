@@ -1,9 +1,9 @@
 // Bibliotecas
-#include <WiFi.h>
-#include <PubSubClient.h>
-#include <DHT.h>
-#include <Wire.h>
-#include <LiquidCrystal_I2C.h>
+#include <WiFi.h>               // Conexão ESP32 ao Wi-Fi
+#include <PubSubClient.h>       // Comunicação com broker MQTT
+#include <DHT.h>                // Leitura DHT22 temperatura e umidade 
+#include <Wire.h>               // Comunicação barramento I2C
+#include <LiquidCrystal_I2C.h>  // Controle display LCD com interface I2C
 
 // Definição dos pinos
 #define DHT_PIN 15
