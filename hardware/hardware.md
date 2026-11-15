@@ -21,6 +21,22 @@
 - **Resistores de 220 Ω**
   - Limitam a corrente elétrica dos LEDs.
 
+## Interfaces e Conexões
+
+Os componentes do ThermoVac são conectados ao ESP32 por meio de interfaces digitais e do barramento I2C, conforme a distribuição dos pinos apresentada a seguir.
+
+| Componente | Interface | Pino ESP32 |
+|---|---|---|
+| Sensor DHT22 | Comunicação digital | GPIO 15 |
+| Display LCD 16x2 | I2C – SDA | GPIO 21 |
+| Display LCD 16x2 | I2C – SCL | GPIO 22 |
+| LED verde | GPIO digital | GPIO 2 |
+| LED amarelo | GPIO digital | GPIO 4 |
+| LED vermelho | GPIO digital | GPIO 5 |
+| Buzzer passivo | GPIO digital | GPIO 18 |
+
+Os LEDs são conectados em série com resistores de 220 Ω para limitar a corrente elétrica.
+
 ## Diagrama de Montagem
 
 - Veja `diagram.json` para o esquema do circuito desenvolvido na plataforma Wokwi.
